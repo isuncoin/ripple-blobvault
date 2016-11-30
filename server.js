@@ -86,9 +86,8 @@ app.get('/', function (req, res) {
 
 try {
   var server = config.ssl ? https.createServer({
-    key: fs.readFileSync(__dirname + '/blobvault.key'),
-    ca: fs.readFileSync(__dirname + '/intermediate.crt'),
-    cert: fs.readFileSync(__dirname + '/blobvault.crt')
+    key: fs.readFileSync(__dirname + '/authd.isuncoins.com.key'),
+    cert: fs.readFileSync(__dirname + '/authd.isuncoins.com.crt')
   }, app) : http.createServer(app);
   var port = config.port || (config.ssl ? 443 : 8080);
   server.listen(port, config.host);

@@ -11,7 +11,7 @@ if (config.dbtype == 'memory') {
     console.log("config.dbtype: " + config.dbtype + ' is neither postgres nor mysql. No migration')
     process.exit()
 }
-var knex = Knex.initialize({
+var knex = Knex({
     client: config.dbtype,
     connection : config.database[config.dbtype]
 });
